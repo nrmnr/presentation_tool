@@ -96,19 +96,37 @@ $(function(){
       {
         title: "Page 1",
         contents: [
-          {x:20, y:20, w:300, h:50,
+          {x:20, y:20, w:500, h:50,
            contents: "二次方程式 $ ax^2 + bx +c = 0 $ の解の公式"},
-          {x:20, y:80, w:300, h:100,
+          {x:20, y:80, w:500, h:100,
            contents: "\\[ x = \\frac{-b \\pm{} \\sqrt{b^2 - 4ac}}{2a} \\]"}
         ]
       },
       {
         title: "Page 2",
         contents: [
-          {x:20, y:20, w:300, h:50,
+          {x:20, y:20, w:500, h:50,
            contents: "二次方程式 $ ax^2 + 2bx +c = 0 $ の解の公式"},
-          {x:20, y:80, w:300, h:100,
+          {x:20, y:80, w:500, h:100,
            contents: "\\[ x = \\frac{-b \\pm{} \\sqrt{b^2 - ac}}{a} \\]"}
+        ]
+      },
+      {
+        title: "Page 3",
+        contents: [
+          {x:20, y:20, w:500, h:50,
+           contents: "ゼータ関数"},
+          {x:20, y:80, w:500, h:100,
+           contents: "\\[ \\zeta(s) = \\sum_{n=1}^\\infty\\frac{1}{n^s} \\]"}
+        ]
+      },
+      {
+        title: "Page 4",
+        contents: [
+          {x:20, y:20, w:500, h:50,
+           contents: "オイラーの公式"},
+          {x:20, y:80, w:500, h:100,
+           contents: "\\[ e^{i\\pi} + 1 = 0 \\]"}
         ]
       }
     ]

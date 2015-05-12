@@ -5,6 +5,11 @@ h1 {
 #page_num {
   text-align: right;
 }
+
+#presen_board {
+  font-size: 16pt;
+}
+
 .page {
   position: relative;
   width: 100%;
