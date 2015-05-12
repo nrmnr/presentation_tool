@@ -2,9 +2,16 @@ h1 {
   font-size: 100%;
 }
 
-.content {
+.page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.contents {
   position: absolute;
   border: 1px solid #ccc;
   overflow: hidden;
+  cursor: move;
 }
 

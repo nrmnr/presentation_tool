@@ -2,7 +2,7 @@ $(function(){
   var Page = function($parent, page_data) {
     var create_contents = function(info) {
       var $contents = $("<div></div>");
-      $contents.addClass("content");
+      $contents.addClass("contents");
       $contents.
         css("left",   info.x).
         css("top",    info.y).
@@ -22,7 +22,7 @@ $(function(){
     var init_page_element = function($parent, page_data) {
       var title = page_data.title;
       var $page = $("<div></div>");
-      $page.css("position", "relative");
+      $page.addClass("page");
       //$page.append("<div>" + title + "</div>");
       $page.hide();
       $parent.append($page);
@@ -116,4 +116,6 @@ $(function(){
     ]
   };
   new Presentation("#presen_board", presen_data);
+
+  $(".contents").draggable({containment:"parent", scroll:false});
 });
