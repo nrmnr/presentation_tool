@@ -1,11 +1,37 @@
 $(function(){
   var Page = function($parent, page_data) {
-    var title = page_data.title;
-    var $page = $("<div></div>");
+    var create_contents = function(info) {
+      var $contents = $("<div></div>");
+      $contents.addClass("content");
+      $contents.
+        css("left",   info.x).
+        css("top",    info.y).
+        css("width",  info.w).
+        css("height", info.h);
+      $contents.append(info.contents);
+      return $contents;
+    };
+
+    var init_page_contents = function(contents) {
+      $.each(contents, function(i, info) {
+        var $contents = create_contents(info);
+        $page.append($contents);
+      });
+    };
+
+    var init_page_element = function($parent, page_data) {
+      var title = page_data.title;
+      var $page = $("<div></div>");
+      $page.css("position", "relative");
+      //$page.append("<div>" + title + "</div>");
+      $page.hide();
+      $parent.append($page);
+      return $page;
+    };
+
+    var $page = init_page_element($parent, page_data);
+    init_page_contents(page_data.contents);
     this.element = $page;
-    $page.append("<div>" + title + "</div>");
-    $page.hide();
-    $parent.append($page);
   };
 
   var Presentation = function(target, presen_data) {
@@ -70,10 +96,22 @@ $(function(){
   var presen_data = {
     pages: [
       {
-        title: "Page 1"
+        title: "Page 1",
+        contents: [
+          {x:20, y:20, w:300, h:50,
+           contents: "二次方程式 $ ax^2 + bx +c = 0 $ の解の公式"},
+          {x:20, y:80, w:300, h:100,
+           contents: "\\[ x = \\frac{-b \\pm{} \\sqrt{b^2 - 4ac}}{2a} \\]"}
+        ]
       },
       {
-        title: "Page 2"
+        title: "Page 2",
+        contents: [
+          {x:20, y:20, w:300, h:50,
+           contents: "二次方程式 $ ax^2 + 2bx +c = 0 $ の解の公式"},
+          {x:20, y:80, w:300, h:100,
+           contents: "\\[ x = \\frac{-b \\pm{} \\sqrt{b^2 - ac}}{a} \\]"}
+        ]
       }
     ]
   };
