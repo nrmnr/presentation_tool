@@ -38,11 +38,13 @@ $(function(){
     var $target = $(target);
     var current_page = 0;
     var pages = [];
+    var $page_num = $("#page_num");
 
     var init_target_size = function() {
       $target.
         css("width", "800px").
         css("height", "600px");
+      $page_num.css("width", $target.css("width"));
     };
 
     var init_target_style = function() {
@@ -74,6 +76,7 @@ $(function(){
       if (0 <= current_page && current_page < pages.length) {
         hide_all_pages();
         pages[current_page].element.show();
+        $page_num.html(current_page+1);
       }
     };
 

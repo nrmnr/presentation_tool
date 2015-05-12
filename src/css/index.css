@@ -2,6 +2,9 @@ h1 {
   font-size: 100%;
 }
 
+#page_num {
+  text-align: right;
+}
 .page {
   position: relative;
   width: 100%;
