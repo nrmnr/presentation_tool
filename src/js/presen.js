@@ -53,10 +53,8 @@ $(function(){
 
     var init_target_action = function() {
       $target.click(function() {
-        current_page++;
-        if (!show_current_page()) {
-          current_page--;
-        }
+        current_page = (current_page + 1) % pages.length;
+        show_current_page();
       });
     };
 
@@ -76,9 +74,6 @@ $(function(){
       if (0 <= current_page && current_page < pages.length) {
         hide_all_pages();
         pages[current_page].element.show();
-        return true;
-      } else {
-        return false;
       }
     };
 
