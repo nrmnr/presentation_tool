@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 h1 {
   font-size: 100%;
 }
@@ -18,8 +22,11 @@ h1 {
 
 .contents {
   position: absolute;
-  border: 1px solid #ccc;
+  border: 1px solid white;
   overflow: hidden;
   cursor: move;
 }
 
+.contents:hover {
+  border-color: #ccc;
+}
